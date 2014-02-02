@@ -54,7 +54,7 @@ void printdata(PROFILE*ptr,int count);
 
 int main ()
 {
-	//Opens the file
+    //Opens the file
     FILE*records;
     records=fopen("People.txt","r");
     if(!records)
@@ -66,7 +66,7 @@ int main ()
     //Counts how many records are in the file
     count=countdata();
 	
-	//Allocates the memory to build the database for all the information in the file
+    //Allocates the memory to build the database for all the information in the file
     PROFILE*pointer=NULL;
     pointer=build(pointer,count);
     if(pointer==NULL)
@@ -75,7 +75,7 @@ int main ()
         exit(1);
     }
 	
-	//Builds PROFILE struct. Has all the information in the file
+    //Builds PROFILE struct. Has all the information in the file
     populate(pointer,records,count);
 
     //While loop allows multiple actions to take place in one run.
@@ -209,7 +209,7 @@ void searchoptions(PROFILE*ptr, int count)
     printf("Pick one of the above search options. ");
     scanf("%d",&option);
 	
-	//Searches for record by phone number
+    //Searches for record by phone number
     if(option==1)
         searchphone(ptr,count);
     
@@ -239,12 +239,12 @@ void searchfullname(PROFILE * ptr, int count)
 	
 	//If user searches by name, user can determine if they want first or last name    
 	printf("\nWhich part of the name do you want to search: ");
-    scanf("%d", &option);
+    	scanf("%d", &option);
 
     printf("\n\nEnter the name string: ");
     scanf("%s",string);
-	
-	//Loop searches for location of matches in the database
+		
+    //Loop searches for location of matches in the database
     for(A=0;A<count;A++)
     {
         if(option == 1)
@@ -258,7 +258,7 @@ void searchfullname(PROFILE * ptr, int count)
     if(matches==0)
         printf("No matches were found\n");
 	
-	//Creates an array that stores the locations for all the matches
+    //Creates an array that stores the locations for all the matches
     if(matches>0)
     {
         locarray=(int*)calloc(matches,sizeof(int));
@@ -281,7 +281,7 @@ void searchfullname(PROFILE * ptr, int count)
 
         printf("The profiles with all matches are now being printed.\n\n");
 		
-		//Prints all the matches that are found
+         //Prints all the matches that are found
         for(A=0;A<matches;A++)
         {
             B=*(locarray+A);
@@ -353,7 +353,7 @@ void searchaddress(PROFILE*ptr,int count)
 {
     int opt;
 	
-	//Narrows down what part of address user wants to search by
+    //Narrows down what part of address user wants to search by
     printf("What part of the address are you searching by? \n");
     printf("1. Name\n");
     printf("2. Type\n");
@@ -412,7 +412,7 @@ void street(PROFILE*ptr,int count)
 
         printf("The profiles with all matches are now being printed.\n\n");
 		
-		//Prints all the records that match
+	//Prints all the records that match
         for(int A=0;A<matches;A++)
         {
             B=*(locarray+A);
@@ -514,7 +514,7 @@ void city(PROFILE*ptr,int count)
 
         printf("The profiles with all matches are now being printed.\n\n");
 		
-		//Prints all the matches that are found
+	//Prints all the matches that are found
         for(int A=0;A<matches;A++)
         {
             B=*(locarray+A);
@@ -565,7 +565,7 @@ void state(PROFILE*ptr,int count)
 
         printf("The profiles with all matches are now being printed.\n\n");
 		
-		//Prints records that match state
+	//Prints records that match state
         for(int A=0;A<matches;A++)
         {
             B=*(locarray+A);
@@ -616,7 +616,7 @@ void country(PROFILE*ptr,int count)
 
         printf("The profiles with all matches are now being printed.\n\n");
 		
-		//Prints all the matches when search by country
+	//Prints all the matches when search by country
         for(int A=0;A<matches;A++)
         {
             B=*(locarray+A);
@@ -667,7 +667,7 @@ void zip(PROFILE*ptr,int count)
 
         printf("The profiles with all matches are now being printed.\n\n");
         
-		//Prints all the matches that are found
+	//Prints all the matches that are found
         for(int A=0;A<matches;A++)
         {
             B=*(locarray+A);
@@ -717,7 +717,7 @@ void house(PROFILE*ptr,int count)
 
         printf("The profiles with all matches are now being printed.\n\n");
 		
-		//Prints all the records that have the same house number
+	//Prints all the records that have the same house number
         for(int A=0;A<matches;A++)
         {
             B=*(locarray+A);
