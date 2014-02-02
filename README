@@ -1,3 +1,1 @@
-This is a project that reads records from a file. The program then prompts the user what they want to do. The user 
-can either print all the data,edit or delete a record, or search for a record. The user can search for a record either
-by first name, last name, phone number, and various portions of their address.
+This is a project that reads records from a file. The program then prompts the user what they want to do. The user can either print all the data,edit or delete a record, or search for a record. The user can search for a record either by first name, last name, phone number, and various portions of their address.
